@@ -195,6 +195,12 @@ available.
                 el.detachEvent('on' + type, fn);
             }
         },
+        handleReady = function() {
+            YUI.Env.DOMReady = true;
+            if (hasWin) {
+                remove(doc, 'DOMContentLoaded', handleReady);
+            }        
+        },
         handleLoad = function() {
             YUI.Env.windowLoaded = true;
             YUI.Env.DOMReady = true;
@@ -1459,11 +1465,14 @@ with any configuration info required for the module.
     YUI._init();
 
     if (hasWin) {
+        add(doc, 'DOMContentLoaded', handleReady);
+
         // add a window load event at load time so we can capture
         // the case where it fires before dynamic loading is
         // complete.
         add(window, 'load', handleLoad);
     } else {
+        handleReady();
         handleLoad();
     }
 
@@ -2021,9 +2030,15 @@ L.now = Date.now || function () {
 };
 
 /**
- * Lightweight version of <code>Y.substitute</code>. Uses the same template
- * structure as <code>Y.substitute</code>, but doesn't support recursion,
- * auto-object coersion, or formats.
+ * Performs `{placeholder}` substitution on a string. The object passed as the 
+ * second parameter provides values to replace the `{placeholder}`s.
+ * `{placeholder}` token names must match property names of the object. For example,
+ * 
+ *`var greeting = Y.Lang.sub("Hello, {who}!", { who: "World" });`
+ *
+ * `{placeholder}` tokens that are undefined on the object map will be left 
+ * in tact (leaving unsightly `{placeholder}`'s in the output string). 
+ *
  * @method sub
  * @param {string} s String to be modified.
  * @param {object} o Object containing replacement values.
@@ -4697,7 +4712,7 @@ YUI.add('loader-base', function (Y, NAME) {
         BUILD = '/build/',
         ROOT = VERSION + '/',
         CDN_BASE = Y.Env.base,
-        GALLERY_VERSION = 'gallery-2013.10.02-20-26',
+        GALLERY_VERSION = 'gallery-2013.10.30-22-13',
         TNT = '2in3',
         TNT_VERSION = '4',
         YUI2_VERSION = '2.9.0',
