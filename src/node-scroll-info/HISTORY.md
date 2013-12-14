@@ -4,6 +4,13 @@ ScrollInfo Node Plugin Change History
 @VERSION@
 ------
 
+* Fixed inaccurate scroll metrics in Chrome for Android. ([#1483][]: @rgrove)
+
+[#1483]: https://github.com/yui/yui3/issues/1483
+
+3.14.0
+------
+
 * No changes.
 
 3.13.0

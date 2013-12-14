@@ -6,6 +6,11 @@ Promise Change History
 
 * No changes.
 
+3.14.0
+------
+
+* Marked `getStatus` as deprecated.
+
 3.13.0
 ------
 
