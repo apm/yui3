@@ -6,6 +6,17 @@ YUI Test Change History
 
 * No changes.
 
+3.17.0
+------
+
+* No changes.
+
+3.16.0
+------
+
+* `test.next` now takes an optional argument to change the value
+  of `this` inside the callback.
+
 3.15.0
 ------
 

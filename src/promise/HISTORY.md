@@ -6,6 +6,16 @@ Promise Change History
 
 * No changes.
 
+3.17.0
+------
+
+* No changes.
+
+3.16.0
+------
+
+* Errors thrown inside the promise initialization function reject the promise.
+
 3.15.0
 ------
 
