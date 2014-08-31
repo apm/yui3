@@ -1,6 +1,13 @@
 YUI Core Change History
 =======================
 
+@VERSION@
+------
+
+* [#1935][]: Mark all Android devices as "mobile". (@nolanlawson)
+
+[#1935]: https://github.com/yui/yui3/pull/1935
+
 3.17.2
 ------
 

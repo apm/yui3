@@ -1,6 +1,14 @@
 Pjax Change History
 ===================
 
+@VERSION@
+------
+
+* [#1874][]: Add `allowFallThrough` attribute to `navigate()` falls through
+  to window.location with no matching route. (@ericsoco)
+
+[#1874]: https://github.com/yui/yui3/pull/1874
+
 3.17.2
 ------
 
